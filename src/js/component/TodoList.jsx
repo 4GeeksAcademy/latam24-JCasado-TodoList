@@ -14,6 +14,7 @@ const TodoList = () => {
 
         setTask(event.target.value);
     }
+
     const addTask = (event) => {
 
         if (event.key == "Enter") {
@@ -26,6 +27,7 @@ const TodoList = () => {
 
                 return;
             }
+
             setTaskList([...taskList, task]);
 
             setTask("");
@@ -33,12 +35,14 @@ const TodoList = () => {
             setError(false);
         }
     }
+
     const deleteTask = (Id) => {
 
         console.log(Id);
 
         setTaskList(taskList.filter((task, index) => index != Id));
     }
+
     return (
 
         <div className="text-center vh-100 text-light bg-dark d-flex align-items-center justify-content-center gap-3 flex-column">
@@ -54,6 +58,7 @@ const TodoList = () => {
                             return <li className="task" key={index}>{task}<span className="delete" onClick={() => deleteTask(index)}> <strong> x </strong></span></li>
                         })
                     }
+                    
                 </ul>
             </div>
             <div>
